@@ -32,7 +32,7 @@ class App extends React.Component {
   }
   handleChange(ev) {
     const { selectedFileIndex } = this.state;
-    actions.updateFile(selectedFileIndex);
+    actions.updateFile(selectedFileIndex, ev.target.value);
   }
   handleSelect(selectedFileIndex) {
     this.setState({selectedFileIndex});
