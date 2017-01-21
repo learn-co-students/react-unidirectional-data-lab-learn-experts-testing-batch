@@ -9,7 +9,7 @@ class FileStore extends Store {
 
   removeFile(index){
     const updatedState = [...this.state]
-    updatedState.length > 1 ?  updatedState.splice(index, index + 1) : updatedState[0] = ""
+    updatedState.length > 1 ?  updatedState.splice(index, 1) : updatedState[0] = ""
     this.setState(updatedState)
   }
 
