@@ -9,14 +9,25 @@ const fileStore = require('../stores/fileStore');
 const actions = require('../actions');
 
 class App extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      files: fileStore.getState(),
+      selectedFileIndex: 0,
+    }
+
+  }
   componentDidMount() {
-    // TODO
+    this.removeListener = fileStore.addListener((files) => {
+      this.setState({files});
+    });
   }
   componentWillUnmount() {
-    // TODO
+    this.removeListener();
   }
   handleChange(ev) {
     const { selectedFileIndex } = this.state;
+    actions.updateFile(selectedFileIndex, ev.target.value)
     // TODO Dispatch action
   }
   handleSelect(selectedFileIndex) {
@@ -24,16 +35,18 @@ class App extends React.Component {
   }
   handleAdd(ev) {
     ev.preventDefault();
+    actions.addFile()
     // TODO Dispatch action
   }
   handleRemove(ev) {
     ev.preventDefault()
+    actions.removeFile(ev.target.value)
     // TODO Dispatch action
   }
   render() {
     const { files, selectedFileIndex } = this.state;
     const file = files[selectedFileIndex];
-
+    debugger; 
     return (
       <div className="app">
         <Sidebar

@@ -10,8 +10,9 @@ class SidebarItem extends React.Component {
   }
   render() {
     return (
-      <li>
-        <a>
+      <li className="sidebar__item" isSelected="sidebar__item--selected">
+        <a className="sidebar__link" onClick={this.handleClick}>
+          
         </a>
       </li>
     );
