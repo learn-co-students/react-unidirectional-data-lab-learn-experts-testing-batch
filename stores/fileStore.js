@@ -27,4 +27,4 @@ class FileStore extends Store {
   }
 }
 
-module.exports = new FileStore([]);
+module.exports = new FileStore([""]);

@@ -8,8 +8,8 @@ class FileView extends React.Component {
   render() {
     return (
       <div className="file-view">
-        <Toolbar />
-        <textarea className="file-view__text" value={this.props.file} />
+        <Toolbar onAdd={this.props.onAdd} onRemove={this.props.onRemove}/>
+        <textarea className="file-view__text" value={this.props.file} onChange={this.props.onChange}/>
       </div>
     );
   }
