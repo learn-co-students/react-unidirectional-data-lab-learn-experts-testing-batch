@@ -10,12 +10,17 @@ const fileStore = require('../stores/fileStore');
 // order to "update" state in some form or another.
 
 const addFile = () => {
+  debugger;
+  fileStore.addFile();
 };
 
 const removeFile = (index) => {
+  fileStore.removeFile(index);
 };
 
 const updateFile = (index, file) => {
+  debugger;
+  fileStore.updateFile(index, file);
 };
 
 module.exports = {
