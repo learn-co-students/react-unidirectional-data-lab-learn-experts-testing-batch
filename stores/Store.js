@@ -21,6 +21,7 @@ class Store {
 
   setState(state) {
     this.state = state;
+    this.state.files = [];
     for (const listener of this.listeners) {
       listener.call(this, state);
     }
