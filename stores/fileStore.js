@@ -12,11 +12,12 @@ class FileStore extends Store {
   }
 
   removeFile(index){
-    if (this.state.length === 1) {
-      return this.setState(['']);
+    let files = this.getState();
+    if (files.length == 1) {
+      files = [''];
+    } else {
+      files.splice(index, 1);
     }
-    const files = this.getState().slice();
-    files.slice(index, 1);
     this.setState(files);
   }
 
