@@ -20,7 +20,7 @@ class Sidebar extends React.Component {
           <SidebarItem
             key={id}
             onClick={this.handleClick.bind(null, id)}
-            file={files.map(({file, id}) =>({file})}
+            file={files}
             isSelected={selectedFileIndex === id}
             />
         ))
